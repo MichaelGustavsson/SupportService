@@ -7,10 +7,14 @@ const initApp = () => {
 };
 
 const listAllIssues = async () => {
+  // setInterval(fetchIssues, 2000);
+  fetchIssues();
+};
+
+const fetchIssues = async () => {
   const httpClient = new HttpClient();
   const result = await httpClient.get('issues');
   displayIssues(result);
-  console.log(result);
 };
 
 const displayIssues = (issues) => {

@@ -1,0 +1,29 @@
+@import 'site.css';
+@import 'utilities.css';
+
+form {
+  padding: 1.8rem 0;
+  margin: 0 1rem;
+}
+
+form .form-control {
+  margin-bottom: 1rem;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 0.6rem;
+  border: solid 1px #ddd;
+  border-radius: 0.2rem;
+}
+
+form textarea {
+  height: 12rem;
+}
+
+form input:focus,
+form textarea:focus {
+  outline: none !important;
+  border: solid 1px #ef6c00;
+}
