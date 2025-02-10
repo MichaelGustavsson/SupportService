@@ -4,7 +4,7 @@ const form = document.querySelector('form');
 const issues = [];
 const initApp = () => {};
 
-const handleSubmit = (e) => {
+const handleSubmit = async (e) => {
   e.preventDefault();
 
   const data = new FormData(form);
