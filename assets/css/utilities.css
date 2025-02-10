@@ -1,11 +1,21 @@
 .btn {
   display: inline-block;
+  margin: 0.3rem 0;
   width: 100%;
-  font-size: 0.9rem;
+  font-size: 1rem;
+  line-height: 1.2;
   color: #fff;
-  background: #000;
+  background: #1d4ed8;
+  text-align: center;
+  white-space: nowrap;
+  text-decoration: none;
   padding: 0.5rem 1.25rem;
-  border: none;
+  border: solid 1px #f4f4f4;
+  border-radius: 0.2rem;
   outline: none !important;
   cursor: pointer;
+}
+
+.btn:hover {
+  background: #1e40af;
 }

@@ -18,22 +18,47 @@ const fetchIssues = async () => {
 };
 
 const displayIssues = (issues) => {
+  issueList.innerHTML = '';
+  const table = document.createElement('table');
+  const header = document.createElement('thead');
+  const body = document.createElement('tbody');
+
+  const captions = '<tr><th>Datum</th><th>Ämne</th><th>Avsändare</th></tr>';
+  header.innerHTML = captions;
+  table.appendChild(header);
+  table.appendChild(body);
+
   for (let issue of issues) {
-    const div = document.createElement('div');
-    const caption = document.createElement('span');
-    const issueDate = document.createElement('span');
-    const issuer = document.createElement('span');
+    const row = document.createElement('tr');
+    const caption = document.createElement('td');
+    const issueDate = document.createElement('td');
+    const issuer = document.createElement('td');
+
+    row.setAttribute('id', issue._id);
 
     caption.textContent = issue.caption;
     issueDate.textContent = issue.issueDate;
     issuer.textContent = issue.email;
 
-    div.appendChild(issueDate);
-    div.appendChild(caption);
-    div.appendChild(issuer);
-
-    issueList.appendChild(div);
+    row.appendChild(issueDate);
+    row.appendChild(caption);
+    row.appendChild(issuer);
+    table.appendChild(row);
   }
+
+  issueList.appendChild(table);
+
+  const rows = document.querySelectorAll('table tr');
+  handleRowClick(rows);
+  console.log(rows);
+};
+
+const handleRowClick = (rows) => {
+  rows.forEach((row) => {
+    row.addEventListener('click', () => {
+      console.log(row.getAttribute('id'));
+    });
+  });
 };
 
 document.addEventListener('DOMContentLoaded', initApp);
