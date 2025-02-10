@@ -1,3 +1,5 @@
+import { User } from './user.js';
+
 const form = document.querySelector('form');
 
 const initApp = () => {};
@@ -10,7 +12,9 @@ const handleSubmit = (e) => {
   const caption = data.get('caption');
   const description = data.get('description');
 
-  console.log(email, caption, description);
+  const user = new User(email, caption, description);
+
+  console.log(user);
 };
 
 document.addEventListener('DOMContentLoaded', initApp);
